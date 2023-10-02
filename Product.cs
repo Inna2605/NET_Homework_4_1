@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,8 +17,12 @@ namespace NET_Homework_4_1
 {
     public class Product : Money
     {
-        public Product(double monies) : base() 
+        public Product(double monies) : base()
         {
+            if (monies <= 0)
+            {
+                throw new ArgumentException("Недостатньо коштів для покупки!");
+            }
             Monies = monies;
         }
         public void DeclineMoney(double a)

@@ -31,9 +31,16 @@ double purchase = Convert.ToDouble(Console.ReadLine());
 
 double monies = Hryvnia.Monies;
 
-Product product = new Product(monies);
+try
+{
+    Product product = new Product(monies);
+    product.DeclineMoney(purchase);
+    Console.Write("Залишилося коштів: ");
+    product.ShowMoney();
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
 
-product.DeclineMoney(purchase);
-Console.Write("Cума коштів після покупки: ");
-product.ShowMoney();
 
