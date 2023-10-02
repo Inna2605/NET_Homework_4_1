@@ -7,6 +7,9 @@
 //Для кожного з класів реалізувати необхідні методи і поля.
 
 using NET_Homework_4_1;
+using System.Text;
+
+Console.OutputEncoding = Encoding.UTF8;
 
 Money Hryvnia = new Money();
 
